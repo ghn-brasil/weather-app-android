@@ -9,10 +9,8 @@ import retrofit2.http.Query
 interface WeatherApi {
 
     @Headers("apiKey: $API_KEY")
-    @GET("realtime?location=caieiras")
-    suspend fun getCurrentWeather(
-        @Query("location") location: String
-    ): RealTimeDto
+    @GET("realtime")
+    suspend fun getCurrentWeather(@Query("location") location: String): RealTimeDto
 
 }
 

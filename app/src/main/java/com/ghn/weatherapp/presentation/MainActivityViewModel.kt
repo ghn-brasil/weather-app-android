@@ -21,7 +21,7 @@ class MainActivityViewModel @Inject constructor(
 
     fun getRealTimeWeatherData() {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.getRealTimeWeather("caieiras")
+            repository.getRealTimeWeather("Calgary")
         }
     }
 }

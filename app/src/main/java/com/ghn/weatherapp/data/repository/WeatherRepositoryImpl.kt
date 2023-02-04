@@ -12,11 +12,7 @@ class WeatherRepositoryImpl @Inject constructor(
 
     override suspend fun getRealTimeWeather(location: String): Resource<RealTimeDto> {
         return try {
-            Resource.Success(
-                data = api.getCurrentWeather(
-                    location = "caieiras"
-                )
-            )
+            Resource.Success(data = api.getCurrentWeather(location = location))
         } catch (e: Exception) {
             e.printStackTrace()
             Resource.Error(e.message ?: "An unknown error occurred.")
